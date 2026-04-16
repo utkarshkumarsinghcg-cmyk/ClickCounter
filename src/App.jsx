@@ -110,26 +110,30 @@ function App() {
       </div>
 
       <div className="button-section">
-        <button
-          className="click-btn"
-          disabled={!isActive}
-          onClick={handleClick}
-          style={{ transform: `scale(${buttonSize})` }}
-        >
-          Click Me!
-        </button>
+        <div className="click-btn-wrapper">
+          <button
+            className="click-btn"
+            disabled={!isActive}
+            onClick={handleClick}
+            style={{ transform: `scale(${buttonSize})` }}
+          >
+            Click Me!
+          </button>
+        </div>
         
-        <button 
-          className="start-btn" 
-          onClick={startGame} 
-          disabled={isActive}
-        >
-          {timeRemaining === 0 ? 'Play Again' : 'Start Game'}
-        </button>
-        
-        <button className="reset-btn" onClick={resetHighScore}>
-          Reset High Score
-        </button>
+        <div className="control-buttons">
+          <button 
+            className="start-btn" 
+            onClick={startGame} 
+            disabled={isActive}
+          >
+            {timeRemaining === 0 ? 'Play Again' : 'Start Game'}
+          </button>
+          
+          <button className="reset-btn" onClick={resetHighScore}>
+            Reset High Score
+          </button>
+        </div>
       </div>
 
       <div className="status-message">

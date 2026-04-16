@@ -98,7 +98,10 @@ h1 {
 }
 
 .timer-section {
-  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .timer-section h2 {
@@ -117,13 +120,23 @@ h1 {
 .button-section {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 3rem; /* Increased gap to accommodate scaling */
   align-items: center;
+  position: relative;
+  min-height: 400px; /* Ensure enough height for the growing button */
+  justify-content: center;
+}
+
+.click-btn-wrapper {
+  height: 250px; /* Fixed height for the wrapper to prevent layout shift */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .click-btn {
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: none;
   background: linear-gradient(135deg, #6c5ce7, #a29bfe);
@@ -132,16 +145,26 @@ h1 {
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
-  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
+  z-index: 5;
 }
 
 .click-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.9) !important;
+}
+
+.control-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  z-index: 10;
 }
 
 .click-btn:disabled {
